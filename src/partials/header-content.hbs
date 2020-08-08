@@ -1,0 +1,44 @@
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{{or site.url (or siteRootUrl siteRootPath)}}}/index.html">
+        <span>
+          <img src="{{siteRootPath}}/_/img/feather.png">
+        </span>
+        <span>
+          <img src="{{siteRootPath}}/_/img/Arieslogo_Horizontal.gif">
+        </span>
+        {{site.title}}
+      </a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Projects</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="{{{relativize "/documentation/modules/async-svcs.html"}}}">Async Services</a>
+            <a class="navbar-item" href="{{{relativize "/documentation/modules/blueprint.html"}}}">Blueprint</a>
+            <a class="navbar-item" href="{{{relativize "/documentation/modules/jmx.html"}}}">JMX</a>
+            <a class="navbar-item" href="{{{relativize "/documentation/modules/jndiproject.html"}}}">JNDI</a>
+            <a class="navbar-item" href="{{{relativize "/documentation/modules/jpaproject.html"}}}">JPA</a>
+            <a class="navbar-item" href="{{{relativize "/documentation/modules/rsa.html"}}}">Remote Service Admin</a>
+            <a class="navbar-item" href="{{{relativize "/documentation/modules/spi-fly.html"}}}">Spi-Fly</a>
+            <a class="navbar-item" href="{{{relativize "/documentation/modules/subsystems.html"}}}">Subsystems</a>
+            <a class="navbar-item" href="{{{relativize "/documentation/modules/transactioncontrol.html"}}}">Transaction Control</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="{{{relativize "/documentation/downloads/currentreleases.html"}}}">Downloads</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

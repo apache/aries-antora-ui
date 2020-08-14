@@ -4,9 +4,31 @@
 
 == Description
 
-This ui bundle extension...
+This ui bundle extension creates the UI bundle for Apache Aries.
 
-== Usage
+== Instructions for Aries site maintenance
+
+The Aries Antora website build uses the packed UI bundle built from these sources.
+For the production build, this packed UI bundle must be available from the git repo accessed as a noe module.
+
+=== Production
+
+After you are satisfied with your local changes, run `gulp` and commit your changes and the modified `build/aries-antora-ui-bundle.zip`, and push to GitHub (or GitBox).
+Aries website builds will now use the modifed UI.
+
+=== Local development
+
+After making changes, run `gulp;yarn pack`.
+This will pack the UI bundle, including both sources and the build bundle, into a .tgz of a node module.
+Modify the `package.json` file in `aries-antora` so the `"@apache-aries/aries-antora-ui"` devDependency points to this file.
+For instance, on my system, this looks like this:
+
+[source,json]
+    "@apache-aries/aries-antora-ui": "file:///Users/david/projects/aries/aries-antora-ui/apache-aries-aries-antora-ui-v0.0.1.tgz"
+
+Running `npm run clean-build` will now build the site with the locally modified UI bundle.
+
+== Generic Usage
 
 To build a ui bundle based on the antora-ui-default sources with the additions from this extension, run `gulp`.
 

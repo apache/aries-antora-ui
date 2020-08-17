@@ -2,6 +2,10 @@
 :extension: aries-antora-ui
 :extension-version: 0.0.1
 
+WARNING: This repository contains files derived from the Antora Default UI, which is MPL2.0 licensed.
+Therefore, the contents of this repository must NOT be included in an Apache release.
+See link:
+
 == Description
 
 This ui bundle extension creates the UI bundle for Apache Aries.

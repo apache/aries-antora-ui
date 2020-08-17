@@ -1,5 +1,5 @@
 = {extension}-ui ui bundle extension
-:extension: aries-antora-ui
+:extension: aries-antora
 :extension-version: 0.0.1
 
 WARNING: This repository contains files derived from the Antora Default UI, which is MPL2.0 licensed.
@@ -27,10 +27,22 @@ This will pack the UI bundle, including both sources and the build bundle, into 
 Modify the `package.json` file in `aries-antora` so the `"@apache-aries/aries-antora-ui"` devDependency points to this file.
 For instance, on my system, this looks like this:
 
-[source,json]
-    "@apache-aries/aries-antora-ui": "file:///Users/david/projects/aries/aries-antora-ui/apache-aries-aries-antora-ui-v0.0.1.tgz"
+[source,json,subs="+attributes"]
+    "@apache-aries/{extension}-ui": "file:///Users/david/projects/aries/aries-antora-ui/apache-aries-aries-antora-ui-v0.0.1.tgz"
 
 Running `npm run clean-build` will now build the site with the locally modified UI bundle.
+
+== Converting this project to avoid usin `@djencks/antora-ui-builder`
+
+TODO: expand this
+
+For convenience, this project is initially set up to use `@djencks/antora-ui-builder` to extend the Antora default UI.
+If this is determined to be undesirable, it should be easy to turn this into a modified clone of the Antora default UI:
+
+* rename master to something else, such as `builder`.
+* Set the Antora Default UI as a remote.
+* Pull master from the Antora Default UI.
+* Copy the files from the builder branch, src, over the src directory on master.
 
 == Generic Usage
 
@@ -38,7 +50,7 @@ To build a ui bundle based on the antora-ui-default sources with the additions f
 
 To combine the UI elements from this extension with other elements, using `@djencks/antora-ui-builder`, include in your antora-ui.yml a clause such as:
 
-[source,yml,subs="+attributes]
+[source,yml,subs="+attributes"]
 ---
 sources:
   - path: antora-ui-default #replace or extend as needed
